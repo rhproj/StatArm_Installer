@@ -19,7 +19,7 @@ namespace StatArm_Installer01
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            label1.BackColor = Color.Transparent; //tried to make "У С А" with transparent b/g, didn't work)
+            label1.BackColor = Color.Transparent; 
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace StatArm_Installer01
             }
             else
             {
-                MessageBox.Show("Не удалось найти необходимую папку на сетевом диске fsttr02 или нет соединения с диском! :(");
+                MessageBox.Show("Не удалось установить соединение fsttr02");
             }
         }
 
@@ -48,7 +48,7 @@ namespace StatArm_Installer01
             }
             else
             {
-                MessageBox.Show("Не удалось найти необходимую папку на сетевом диске fsttr01 или нет соединения с диском! :(");
+                MessageBox.Show("Не удалось установить соединение fsttr01");
             }
         }
 
@@ -84,8 +84,8 @@ namespace StatArm_Installer01
 
         private void ShortCut(string dir, string arm_targ, string arm_lnk, string fld_lnk)
         {
-            object shCutDesk = (object)"Desktop"; //i guess that's how you create Dktp obj to reference to
-
+            object shCutDesk = (object)"Desktop"; 
+            
             WshShell shell = new WshShell(); //Shell - interface to OS, provides work with elements like: W.Explorer, Start Menu
 
             string strShortcutPath = (string)shell.SpecialFolders.Item(ref shCutDesk) + arm_lnk; //Desktop Path
